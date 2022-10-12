@@ -1,0 +1,23 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-sidebar',
+  templateUrl: './sidebar.component.html',
+  styleUrls: ['./sidebar.component.css']
+})
+export class SidebarComponent implements OnInit {
+
+  activePageName:any;
+
+  constructor() { }
+
+  ngOnInit(): void {
+    this.activePageName = localStorage.getItem("activePageName")
+  }
+
+  setActivePage(pageName: string){
+    localStorage.setItem("activePageName",pageName)
+  }
+
+
+}
